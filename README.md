@@ -99,8 +99,6 @@ Mark Attendance (CSV with timestamp)
 * Recognized faces labeled with names
 * Attendance recorded with date & time
 
-*(Add screenshots here for better presentation)*
-
 ---
 
 ## Notes
