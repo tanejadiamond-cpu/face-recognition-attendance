@@ -7,8 +7,8 @@ from ultralytics import YOLO
 yolo_model = YOLO(r"yolov8n.pt")  # lightweight model Used to detect faces (or persons) inside images
 
 dataset_path = "dataset"
-faces = []              # list
-labels = []             # list
+faces = []             
+labels = []             
 label_map = {}          # number of people
 current_label = 0       # initialise with zero
 
@@ -65,6 +65,4 @@ print("Total people:", len(label_map))
 print("Total faces:", len(faces))
 
 
-# epoche time is 300
-
-cv2.face.LBPHFaceRecognizer_create()
+# epoche time of yolo model is 300

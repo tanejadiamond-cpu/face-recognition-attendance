@@ -11,7 +11,7 @@ cap = cv2.VideoCapture(0)
 count = 0
 
 while True:
-    ret, frame = cap.read()
+    ret, frame = cap.read() # tupple unpacking --> returns two outputs ret for true/false and frame for img reading
     if not ret:
         break
 
@@ -22,7 +22,7 @@ while True:
         img_path = f"{folder}/{count}.jpg"
         cv2.imwrite(img_path, frame)
         print("Saved:", img_path)
-        count += 1
+        count = count + 1
 
     elif key == ord('q'):
         break

@@ -6,8 +6,8 @@ import pickle
 from ultralytics import YOLO
 
 # Load LBPH face recognizer
-model = cv2.face.LBPHFaceRecognizer_create()
-model.read("face_model.yml")
+model = cv2.face.LBPHFaceRecognizer_create()  # create empty model
+model.read("face_model.yml")                  # load trainned data
 
 with open("labels.pkl", "rb") as f:
     label_map = pickle.load(f)
@@ -18,12 +18,10 @@ yolo_model = YOLO(r"yolov8n.pt")
 
 attendance_file = "attendance.csv"
 
-
 def ensure_attendance_file():
     if not os.path.exists(attendance_file) or os.path.getsize(attendance_file) == 0:
         df = pd.DataFrame(columns=["Name", "Date", "Time"])
         df.to_csv(attendance_file, index=False)
-
 
 def mark_attendance(name):
     ensure_attendance_file()
@@ -38,7 +36,6 @@ def mark_attendance(name):
         df.to_csv(attendance_file, index=False)
         print("Attendance marked for", name)
 
-
 cap = cv2.VideoCapture(0)
 
 print("Starting Face Attendance System... Press Q to quit")
@@ -50,13 +47,11 @@ while True:
 
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-    # --- YOLOv8n-face detection ---
-    # Run inference on the BGR frame; verbose=False suppresses per-frame logs
     results = yolo_model(frame, verbose=False, conf=0.5)
 
     for result in results:
         for box in result.boxes:
-            # Bounding box in pixel coords (x1, y1, x2, y2)
+            # Bounding box in pixel coordinates (x1, y1, x2, y2)
             x1, y1, x2, y2 = map(int, box.xyxy[0])
 
             # Clamp coordinates to frame boundaries
@@ -73,7 +68,7 @@ while True:
             label, confidence = model.predict(face_img)
 
             name = "Unknown"
-            if confidence < 80:
+            if confidence < 60: 
                 name = label_map[label]
                 mark_attendance(name)
 
@@ -110,7 +105,7 @@ Show live video with names
 “My pipeline uses detection first (YOLO) to locate faces, and then LBPH as a classifier to recognize identities.”
 
 My current implementation uses LBPH and a pretrained YOLO model yolov8n-face which is of 300 epochs .
-Yes sir, I am using a classifier. After detecting faces, I use an LBPH-based classifier to assign each face to a known identity.”
+I am using a classifier model. After detecting faces, I use an LBPH-based classifier to assign each face to a known identity.”
 '''
 
 
