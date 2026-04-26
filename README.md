@@ -1,20 +1,20 @@
-# 🎯 Face Recognition Attendance System (YOLOv8)
+# Face Recognition Attendance System (YOLOv8)
 
 An AI-powered attendance system that uses **face recognition** and **YOLOv8** for real-time detection, identification, and automated attendance logging.
 
 ---
 
-## 🚀 Features
+## Features
 
-* 🎥 Real-time face detection using YOLOv8
-* 🧠 Face recognition using trained model (LBPH / embeddings-based)
-* 📝 Automatic attendance marking with timestamp
-* ⚡ Fast and efficient processing using OpenCV
-* 📂 Organized and modular code structure
+* Real-time face detection using YOLOv8
+* Face recognition using trained model (LBPH / embeddings-based)
+* Automatic attendance marking with timestamp
+* Fast and efficient processing using OpenCV
+* Organized and modular code structure
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Language:** Python
 * **Libraries:** OpenCV, NumPy, Pandas
@@ -23,7 +23,7 @@ An AI-powered attendance system that uses **face recognition** and **YOLOv8** fo
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 face-recognition-attendance/
@@ -40,16 +40,16 @@ face-recognition-attendance/
 
 ---
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
-### 1️⃣ Clone the repository
+### Clone the repository
 
 ```
 git clone https://github.com/your-username/face-recognition-attendance.git
 cd face-recognition-attendance
 ```
 
-### 2️⃣ Install dependencies
+### Install dependencies
 
 ```
 pip install -r requirements.txt
@@ -57,7 +57,7 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 ### Step 1: Train the model
 
@@ -77,7 +77,7 @@ python src/recognize.py
 
 ---
 
-## 🧠 Working Pipeline
+## Working Pipeline
 
 ```
 Face Detection (YOLOv8)
@@ -93,7 +93,7 @@ Mark Attendance (CSV with timestamp)
 
 ---
 
-## 📸 Output
+## Output
 
 * Real-time webcam detection
 * Recognized faces labeled with names
@@ -103,7 +103,7 @@ Mark Attendance (CSV with timestamp)
 
 ---
 
-## ⚠️ Notes
+## Notes
 
 * Dataset is not included due to size/privacy
 * You can create your own dataset using webcam
@@ -111,7 +111,7 @@ Mark Attendance (CSV with timestamp)
 
 ---
 
-## 📦 Requirements
+## Requirements
 
 Example `requirements.txt`:
 
@@ -125,7 +125,7 @@ pickle-mixin
 
 ---
 
-## 💡 Future Improvements
+## Future Improvements
 
 * Add GUI (Tkinter / Web dashboard)
 * Improve accuracy with deep learning embeddings (FaceNet / Dlib)
@@ -134,7 +134,7 @@ pickle-mixin
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 Developed by *Diamond*
 https://github.com/tanejadiamond-cpu
